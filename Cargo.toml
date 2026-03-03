@@ -2,7 +2,7 @@
 name = "orion-variate"
 authors = ["seeker-zuo<seeker-zuo@outlook.com>"]
 edition = "2024"
-version = "0.11.0"
+version = "0.11.1"
 description = "Variate for Project"
 license = "MIT"
 repository = "https://github.com/galaxy-sec/orion-variate"
@@ -28,7 +28,7 @@ indexmap = { version = "2.12", features = ["serde"] }
 derive-getters = "0.5"
 contracts = "0.6"
 getset = "0.1"
-toml = "0.9"
+toml = "1.0"
 
 
 #console = "~0.15"
