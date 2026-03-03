@@ -14,7 +14,7 @@ use super::{
 };
 use derive_more::From;
 use indexmap::IndexMap;
-use orion_error::{ErrorOwe, ErrorWith};
+use orion_error::{ErrorOweBase, ErrorWith};
 use serde_derive::{Deserialize, Serialize};
 use winnow::Parser;
 
