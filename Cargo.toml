@@ -19,7 +19,7 @@ log = "0.4"
 serde = "1.0"
 serde_yaml = "0.9"
 serde_ini = "0.2"
-winnow = "0.7"
+winnow = "1.0"
 derive_more = { version = "2.1", features = ["full"] }
 os_info = "3"
 serde_derive = "1.0"
