@@ -578,7 +578,7 @@ mod tests {
 
 ## 🔗 相关链接
 
-- **GitHub**: https://github.com/galaxy-sec/orion-variate
+- **GitHub**: https://github.com/galaxio-labs/orion-variate
 - **crates.io**: https://crates.io/crates/orion-variate
 - **文档**: https://docs.rs/orion-variate
 - **License**: MIT
