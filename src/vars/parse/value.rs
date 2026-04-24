@@ -77,8 +77,7 @@ pub fn take_value_map(data: &mut &str) -> Result<ValueObj> {
 
 #[cfg(test)]
 mod tests {
-
-    use orion_error::TestAssert;
+    use orion_error::testcase::TestAssert;
 
     use super::*;
 

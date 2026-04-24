@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-04-24
+
+### Changed
+
+- 升级 `orion-error` 依赖从 `0.6` 到 `0.7`
+- `VarsReason` 现在显式实现 `DomainReason`，以适配 `orion-error 0.7` 的 `StructError<R>` 约束
+- 旧的 `owe*` 兼容导入切换到 `orion_error::compat_traits::*`
+- 测试中的 `TestAssert` 导入切换到 `orion_error::testcase::TestAssert`
+
+### Fixed
+
+- 修复 `orion-error 0.7` 升级后 `orion-variate` 的编译失败问题
+- 修复 `setup_start_env_vars()` 与 `ValueType::update_from_str()` 中因旧版错误 trait 导入路径失效导致的调用错误
+- 将弃用的上下文 API 从 `want()` / `with()` 迁移到 `doing()` / `with_context()`，消除 `orion-error 0.7` 相关 warning
+- 验证 `cargo test` 全量通过，包括 `116` 个单元测试和 `1` 个 doctest
+
 ## [0.10.8] - 2026-01-11
 
 ### Fixed

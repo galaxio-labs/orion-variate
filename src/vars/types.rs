@@ -14,7 +14,7 @@ use super::{
 };
 use derive_more::From;
 use indexmap::IndexMap;
-use orion_error::{ErrorOweBase, ErrorWith};
+use orion_error::{compat_traits::ErrorOweBase, ErrorWith};
 use serde_derive::{Deserialize, Serialize};
 use winnow::Parser;
 
@@ -224,21 +224,41 @@ impl ValueType {
         let mut input = s;
         match self {
             ValueType::String(x) => *x = s.to_string(),
-            ValueType::Bool(x) => *x = s.parse().owe(VarsReason::Format).with(s.to_string())?,
-            ValueType::Number(x) => *x = s.parse().owe(VarsReason::Format).with(s.to_string())?,
-            ValueType::Float(x) => *x = s.parse().owe(VarsReason::Format).with(s.to_string())?,
-            ValueType::Ip(x) => *x = s.parse().owe(VarsReason::Format).with(s.to_string())?,
+            ValueType::Bool(x) => {
+                *x = s
+                    .parse()
+                    .owe(VarsReason::Format)
+                    .with_context(s.to_string())?
+            }
+            ValueType::Number(x) => {
+                *x = s
+                    .parse()
+                    .owe(VarsReason::Format)
+                    .with_context(s.to_string())?
+            }
+            ValueType::Float(x) => {
+                *x = s
+                    .parse()
+                    .owe(VarsReason::Format)
+                    .with_context(s.to_string())?
+            }
+            ValueType::Ip(x) => {
+                *x = s
+                    .parse()
+                    .owe(VarsReason::Format)
+                    .with_context(s.to_string())?
+            }
             ValueType::Obj(x) => {
                 *x = take_value_map
                     .parse_next(&mut input)
                     .owe(VarsReason::Format)
-                    .with(s.to_string())?
+                    .with_context(s.to_string())?
             }
             ValueType::List(x) => {
                 *x = take_value_vec
                     .parse_next(&mut input)
                     .owe(VarsReason::Format)
-                    .with(s.to_string())?
+                    .with_context(s.to_string())?
             }
         }
         Ok(())
@@ -276,7 +296,7 @@ mod tests {
         println!("\n🔧 Modlist 反序列化结果:\n{decoded:#?}",);
     }
     use super::*;
-    use orion_error::TestAssert;
+    use orion_error::testcase::TestAssert;
     use serde_json;
 
     #[test]
