@@ -4,13 +4,15 @@ use std::{
 };
 
 use log::info;
-use orion_error::{compat_traits::ErrorOwe, ErrorWith};
+use orion_error::prelude::*;
 
-use super::error::VarsResult;
+use super::error::{VarsReason, VarsResult};
 
 pub fn setup_start_env_vars() -> VarsResult<()> {
     unsafe { std::env::set_var("GXL_OS_SYS", format_os_sys().as_str()) };
-    let start_root = current_dir().owe_sys().doing("get current dir")?;
+    let start_root = current_dir()
+        .source_err(VarsReason::system_error(), "")
+        .doing("get current dir")?;
     unsafe { std::env::set_var("GXL_START_ROOT", start_root.display().to_string()) };
     let prj_root = find_project_define().unwrap_or(PathBuf::from("UNDEFIN"));
     unsafe { std::env::set_var("GXL_PRJ_ROOT", format!("{}", prj_root.display())) };

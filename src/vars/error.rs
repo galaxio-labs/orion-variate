@@ -1,27 +1,23 @@
 use derive_more::From;
-use orion_error::{DomainReason, ErrorCode, StructError, UvsReason};
+use orion_error::{OrionError, StructError, UnifiedReason};
 use serde_derive::Serialize;
-use thiserror::Error;
-#[derive(Clone, Debug, Serialize, PartialEq, Error, From)]
+
+#[derive(Clone, Debug, Serialize, PartialEq, From, OrionError)]
 pub enum VarsReason {
-    #[error("unknow")]
+    #[orion_error(identity = "biz.unknow", code = 502)]
     UnKnow,
-    #[error("format")]
+    #[orion_error(identity = "biz.format", code = 501)]
     Format,
-    #[error("{0}")]
-    Uvs(UvsReason),
-}
-
-impl DomainReason for VarsReason {}
-
-impl ErrorCode for VarsReason {
-    fn error_code(&self) -> i32 {
-        match self {
-            VarsReason::Format => 501,
-            VarsReason::UnKnow => 502,
-            VarsReason::Uvs(r) => r.error_code(),
-        }
-    }
+    #[orion_error(transparent)]
+    General(UnifiedReason),
 }
 
 pub type VarsResult<T> = Result<T, StructError<VarsReason>>;
+
+impl VarsReason {
+    /// Convert a raw std error (that doesn't implement `RawStdError`) into
+    /// a `StructError<VarsReason>`, using its Display output as detail.
+    pub fn raw_source_err(e: impl std::fmt::Display) -> StructError<VarsReason> {
+        StructError::from(VarsReason::Format).with_detail(e.to_string())
+    }
+}

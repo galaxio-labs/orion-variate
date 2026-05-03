@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-05-03
+
+### Changed
+
+- 升级到 `orion-error 0.8`
+- `VarsReason` 迁移到 `OrionError` derive 和 `UnifiedReason` 透明变体
+- 错误转换路径迁移到当前 `orion-error` 主 API
+
+### Fixed
+
+- 修复 `orion-error 0.8` 升级后的编译兼容问题
+- 统一 `ValueType::update_from_str(...)` 的解析错误包装
+
 ## [0.12.0] - 2026-04-24
 
 ### Changed
