@@ -1,9 +1,14 @@
 # Orion Variate
 
-[![CI](https://github.com/galaxio-labs/orion-variate/workflows/CI/badge.svg)](https://github.com/galaxio-labs/orion-variate/actions)
+[![CI](https://github.com/galaxio-labs/orion-variate/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/galaxio-labs/orion-variate/actions)
 [![Coverage Status](https://codecov.io/gh/galaxio-labs/orion-variate/branch/main/graph/badge.svg)](https://codecov.io/gh/galaxio-labs/orion-variate)
 [![crates.io](https://img.shields.io/crates/v/orion-variate.svg)](https://crates.io/crates/orion-variate)
+[![Downloads](https://img.shields.io/crates/d/orion-variate.svg)](https://crates.io/crates/orion-variate)
+[![docs.rs](https://docs.rs/orion-variate/badge.svg)](https://docs.rs/orion-variate)
+[![Dependencies](https://deps.rs/repo/github/galaxio-labs/orion-variate/status.svg)](https://deps.rs/repo/github/galaxio-labs/orion-variate)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Rust 2024 edition](https://img.shields.io/badge/Rust-2024-orange.svg)](https://www.rust-lang.org)
+[![GitHub stars](https://img.shields.io/github/stars/galaxio-labs/orion-variate.svg)](https://github.com/galaxio-labs/orion-variate/stargazers)
 
 一个 Rust 库，提供变量解析与扩展（大小写不敏感字典、环境变量插值）、值类型解析、以及便捷的工作目录守卫等工具。
 

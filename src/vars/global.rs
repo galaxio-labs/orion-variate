@@ -4,7 +4,7 @@ use std::{
 };
 
 use log::info;
-use orion_error::prelude::*;
+use orion_error::conversion::{ErrorWith, SourceErr};
 
 use super::error::{VarsReason, VarsResult};
 

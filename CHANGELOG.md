@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.1] - 2026-09-18
+
+### Changed
+
+- 错误转换 trait 的导入由 `orion_error::prelude::*` 通配导入改为显式路径 `orion_error::conversion::{ErrorWith, SourceErr}`（`src/vars/global.rs`、`src/vars/types.rs`），不再依赖 prelude 的全量导出。
+
+### Dependencies
+
+- dev-dependencies: `rstest` `0.26` → `0.27`、`toml` `1.0` → `1.1`。
+
 ## [0.13.0] - 2026-05-03
 
 ### Changed
