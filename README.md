@@ -1,7 +1,7 @@
 # Orion Variate
 
 [![CI](https://github.com/galaxio-labs/orion-variate/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/galaxio-labs/orion-variate/actions)
-[![Coverage Status](https://codecov.io/gh/galaxio-labs/orion-variate/branch/main/graph/badge.svg)](https://codecov.io/gh/galaxio-labs/orion-variate)
+[![Coverage Status](https://coveralls.io/repos/github/galaxio-labs/orion-variate/badge.svg?branch=main)](https://coveralls.io/github/galaxio-labs/orion-variate?branch=main)
 [![crates.io](https://img.shields.io/crates/v/orion-variate.svg)](https://crates.io/crates/orion-variate)
 [![Downloads](https://img.shields.io/crates/d/orion-variate.svg)](https://crates.io/crates/orion-variate)
 [![docs.rs](https://docs.rs/orion-variate/badge.svg)](https://docs.rs/orion-variate)
