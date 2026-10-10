@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-10-09
+
+### Changed
+
+- 依赖 `orion-error` 升级到 `0.9.0`：操作日志拆分为纯数据 `OperationContext` 与非 `Clone` 的 `AutoLogGuard`，附上下文 / 克隆不再产生重复或延迟日志；`VarsResult` / `StructError<VarsReason>` 现来自 `orion-error 0.9`。
+
 ## [0.13.1] - 2026-09-18
 
 ### Changed
